@@ -1,0 +1,35 @@
+git config --global user.name "vivek"
+git config --global user.email "mauryav87@gmail.com"
+mkdir testrepo
+cd testrepo
+git init
+notepad one.txt
+notepad two.txt
+notepad three.txt
+git checkout -b dev
+git checkout -b test
+git add two.txt
+git add three.txt
+git commit -m "first commit from test branch"
+git switch dev
+git add one.txt
+git commit -m "first commit in dev branch"
+git commit -m "second commit of one.txt file"
+git status
+git log
+git diff 956256ebef668d8e39ca2a5bfcca66d8f68bfcad 41b3605e6724ccadc1e148cdedcef556a5269095
+git switch master
+git merge dev
+git merge test
+git remote add origine https://github.com/avivek3011/testrepo.git
+git remote -v
+git push -u origine master
+cd ..
+mkdir clonerepo
+cd clonerepo
+cd testrepo
+git clone https://github.com/avivek3011/testrepo.git
+notepad solution.txt
+git add solution.txt
+git commit -m "solution.txt committed"
+git push -u origine master
